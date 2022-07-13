@@ -22,6 +22,7 @@ const useHttp : () => HookReturn = () => {
   
     const sendRequest = useCallback (async(requestConfig:RequestConfig,applyData:ApplyData) => {
         setLoading(true);
+        setErrorMessage(undefined);
       try{
         const response = await axios({
           method: requestConfig.method || "get",
@@ -32,7 +33,7 @@ const useHttp : () => HookReturn = () => {
         applyData(response.data);
       }catch (err:any){
         setLoading(false);
-        setErrorMessage(err.message || "oops, something went wrong!");
+        setErrorMessage(err.response.data.message || "oops, something went wrong!");
       }
     },[]);
       

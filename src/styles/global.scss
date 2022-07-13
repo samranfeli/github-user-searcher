@@ -26,7 +26,20 @@ p{
     padding-bottom: 2rem;
   }
 }
-
+.clearfix{
+  &::after,
+  &::before {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+.pull-right{
+  float: right;
+}
+.pull-left{
+  float: left;
+}
 .float-row {
   &::after,
   &::before {
@@ -93,14 +106,8 @@ p{
 .margin-right-small{
     margin-right: .5rem;
 }
-.star{
+.star,.fork-icon{
   width: 17px;
-}
-.middle-align{
-  vertical-align: middle;
-}
-.inline-block{
-  display: inline-block;
 }
 .grey{
   color: #aaa;
@@ -111,4 +118,16 @@ p{
   padding-bottom: 1rem;
   border-bottom: 1px solid #ccc;
   color: #555;
+}
+.large-title{
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0 0 1rem;
+  color: #555;
+}
+.flex-pair {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  line-height: 1rem;
 }

@@ -1,0 +1,54 @@
+.circleLoading{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        border: 6px solid;
+        border-radius: 50%;
+        border-color: transparent transparent #d4d4d4 #d4d4d4;
+        animation: rotate .7s linear infinite;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.skeleton{
+    display: block;
+    position: relative;
+    background-color: #eee;
+    height: 1rem;
+    overflow: hidden;
+    border-radius: 3px;
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        background: linear-gradient(90deg,transparent, #dbdbdb, transparent);
+        animation: skeletonAnimation 1s linear infinite;
+    }
+}
+@keyframes skeletonAnimation {
+    from {
+        left:-100%;
+    }
+    to {
+        left:100%
+    }
+}

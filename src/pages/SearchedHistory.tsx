@@ -50,7 +50,9 @@ const SearchedHistory = () => {
                 )
             })
             :
-            "no search history" }
+            <div className={classes.noDataMessage}>
+                History is empty!
+            </div> }
         </div>
      </div>
     )

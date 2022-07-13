@@ -10,9 +10,22 @@
 .username{
     font-size: 16px;
     color: #bbb;
-    margin: 0;
 }
 .searchbar{
     background-color: #cfd6d9;
     padding: 1rem 0;
+}
+.languageCircle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    display: inline-block;
+    margin-right: 3px;
+}
+.userCardLoadingWrapper{
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

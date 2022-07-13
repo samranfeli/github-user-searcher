@@ -1,4 +1,4 @@
-import classes from '../../../styles/card.module.scss';
+import classes from '../../../styles/Card.module.scss';
 
 type Props = {
     children: React.ReactNode;
