@@ -7,12 +7,28 @@ const SearchForm = () => {
     const history = useHistory();
     const userNameRef = useRef<HTMLInputElement>(null);
 
+    const addToSearchHistory = (item:string) => {
+        const newItem = {
+            searchedUser:item,
+            searchedTime : new Date().toISOString()
+        }
+        const searchedHistory = localStorage.getItem("searchedHistory");
+        if (searchedHistory){
+            const searchedArray = JSON.parse(searchedHistory);
+            const updatedArray = [...searchedArray,newItem]
+            localStorage.setItem('searchedHistory',JSON.stringify(updatedArray));
+        }else{
+            localStorage.setItem('searchedHistory',JSON.stringify([newItem]));
+        }
+    }
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const userName = userNameRef.current!.value;
         if (userName.trim().length < 3){
             setValidationMessage("Please enter at least 3 character");
         }else{
+            addToSearchHistory(userName.trim());
+
             history.push(userName.trim());
         }
     }
