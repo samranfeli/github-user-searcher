@@ -1,5 +1,5 @@
 .form{
-    padding: 0;
+    position: relative;
 }
 .input{
     border: 2px solid #bbb;
@@ -40,4 +40,7 @@
 .validationMessage{
     color: #f44336;
     margin: 0;
+    position: absolute;
+    top: 100%;
+    left:0;
 }
