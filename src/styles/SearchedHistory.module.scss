@@ -1,0 +1,45 @@
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem .5rem;
+    &:not(:last-child){
+        border-bottom: 1px solid #ddd;
+    }
+    font-size: 17px;
+    transition: all .1s linear;
+    .title{
+        min-width: 120px;
+        display: inline-block;
+        margin-right: 1rem;
+        color: #03a9f4;
+        text-decoration: none;
+        transition: all .1s linear;
+        letter-spacing: 0;
+        @media (hover: hover) {
+            &:hover{
+                letter-spacing: 1px;
+            }
+        }
+    }
+    @media (hover: hover) {
+        &:hover{
+            background-color: #fafafa;
+        }
+    }
+}
+.deleteBtn{
+    color: red;
+    border: 0 none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit;
+    transition: all .1s linear;
+    letter-spacing: 0;
+    @media (hover: hover) {
+        &:hover{
+            letter-spacing: 1px;
+        }
+    }
+}
