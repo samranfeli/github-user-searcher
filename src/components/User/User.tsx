@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import useHttp from '../../hooks/use-http';
 import classes from '../../styles/User.module.scss';
@@ -43,6 +43,17 @@ const UserInfo = () => {
       </div>
     }
 
+    let reposSection:ReactNode = <div>There is no Repository for this User!</div>;
+    if (reposLoading || loading){
+      reposSection = reposSkeleton;
+    }else if (reposErrorMessage){
+      reposSection = <div>{reposErrorMessage}</div>;
+    }else if (repos && repos.length > 0){
+      reposSection = repos.map((repoItem) => (
+        <RepoItem key={repoItem.id} repo={repoItem} />
+      ))
+    }
+
     return (
       <div className="section-padding">
         {loading || user ? (
@@ -68,17 +79,7 @@ const UserInfo = () => {
               </div>
               <div className="col-small-12 col-large-8">
                 <h3 className="large-title">Repositories:</h3>
-                {reposLoading ? (
-                  reposSkeleton
-                ) : reposErrorMessage ? (
-                  <div>{reposErrorMessage}</div>
-                ) : repos && repos.length > 0 ? (
-                  repos.map((repoItem) => (
-                    <RepoItem key={repoItem.id} repo={repoItem} />
-                  ))
-                ) : (
-                  <div>There is no Repository for this User!</div>
-                )}
+                {reposSection}
               </div>
             </div>
           </div>
