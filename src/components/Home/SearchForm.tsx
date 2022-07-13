@@ -28,7 +28,7 @@ const SearchForm = () => {
             setValidationMessage("Please enter at least 3 character");
         }else{
             addToSearchHistory(userName.trim());
-
+            userNameRef.current!.value="";
             history.push(userName.trim());
         }
     }
