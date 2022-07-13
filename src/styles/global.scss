@@ -1,8 +1,4 @@
-$gridGap: 2rem;
-$breakpoint1: 768px;
-$breakpoint2: 992px;
-$breakpoint3: 1200px;
-
+@import './variables';
 .container{
     max-width: 1200px;
     margin-left: auto;
