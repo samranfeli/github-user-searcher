@@ -3,8 +3,8 @@
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 p{
     margin-top: 0;
@@ -113,21 +113,23 @@ p{
   color: #aaa;
 }
 .page-title{
-  font-size: 30px;
+  font-size: 22px;
   margin: 0;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ccc;
-  color: #555;
-}
-.large-title{
-  font-size: 25px;
   font-weight: 500;
-  margin: 0 0 1rem;
   color: #555;
+  @media screen and (min-width: $breakpoint2) {
+    font-size: 30px;
+    font-weight: bold;
+  }
 }
 .flex-pair {
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
   line-height: 1rem;
+}
+.no-wrap{
+  white-space: nowrap;
 }

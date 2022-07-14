@@ -11,23 +11,16 @@
     padding: 0 1rem;
 }
 .button{
+    color: #fff;
     background-color: #009688;
     height: 40px;
+    width: 40px;
     border: 0 none;
-    color: #fff;
-    font-size: 18px;
-    padding: 0 1rem;
-    margin-left: 1rem;
-    background-color: #009688;
-    height: 40px;
-    border: 0 none;
-    color: #fff;
-    font-size: 18px;
-    padding: 0 1rem;
     margin-left: 1rem;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color .15s linear;
+    flex: 0 0 40px;
     @media (hover: hover) {
         &:hover{
             background-color:#007268;
@@ -43,4 +36,8 @@
     position: absolute;
     top: 100%;
     left:0;
+}
+.searchIcon{
+    width: 30px;
+    height: 30px;
 }

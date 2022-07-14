@@ -1,8 +1,12 @@
+@import './variables';
 .wrapper{
-    height: calc(100vh - 60px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 20px 0;
+    @media screen and (min-width:$breakpoint2) {
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 .icon{
     margin: 0 auto 2rem;

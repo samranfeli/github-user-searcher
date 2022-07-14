@@ -1,3 +1,4 @@
+@import "./variables";
 .avatar{
     border-radius: 5px;
     width: 200px;
@@ -28,4 +29,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.title{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 1rem 0;
+    color: #555;
+    @media screen and (min-width: $breakpoint2) {
+        margin-top: 0;
+        font-size: 25px;
+    }
 }

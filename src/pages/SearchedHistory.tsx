@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
 
+import closeIcon from '../images/close.svg';
 import classes from '../styles/SearchedHistory.module.scss';
 const SearchedHistory = () => {
     
@@ -39,13 +40,15 @@ const SearchedHistory = () => {
                 return(
                     <div key={item.searchedTime} className={classes.item} >
                 <div>
-                    <Link to={`/${item.searchedUser}`} className={classes.title} >
+                    <Link to={`/${item.searchedUser}`} className={`no-wrap ${classes.title}`} >
                         {item.searchedUser}
                     </Link>
-                    <small className="margin-right grey">{itemTime.getHours()}:{itemTime.getMinutes()} </small>
-                    <small className="grey">{itemTime.toDateString()}</small>
+                    <small className="margin-right grey no-wrap">{itemTime.getHours()}:{itemTime.getMinutes()} </small>
+                    <small className="grey no-wrap">{itemTime.toDateString()}</small>
                 </div>
-                <button type="button" className={classes.deleteBtn} onClick={()=>deleteItemHandler(item.searchedTime)}>delete</button>
+                <button type="button" className={classes.deleteBtn} onClick={()=>deleteItemHandler(item.searchedTime)}>
+                    <img src={closeIcon} alt="close" className={classes.closeIcon} />
+                </button>
             </div>
                 )
             })

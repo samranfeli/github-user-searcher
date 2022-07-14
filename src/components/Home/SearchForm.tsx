@@ -1,6 +1,8 @@
 import { useHistory } from 'react-router-dom';
 import React, { useRef, useState } from 'react';
+
 import classes from '../../styles/SearchForm.module.scss';
+import searchIcon from "../../images/search.svg";
 
 const SearchForm = () => {
     const [validationMessage,setValidationMessage] = useState<string>("");
@@ -48,7 +50,9 @@ const SearchForm = () => {
                     ref={userNameRef}
                     onChange={changeInputHandler}
                     />
-                <button type='submit' className={classes.button}> Search </button>
+                <button type='submit' className={classes.button}>
+                    <img src={searchIcon} alt="search" className={classes.searchIcon} />
+                </button>
             </div>
             {validationMessage && <p className={classes.validationMessage}>{validationMessage}</p>}
         </form>

@@ -78,7 +78,7 @@ const UserInfo = () => {
                 )}
               </div>
               <div className="col-small-12 col-large-8">
-                <h3 className="large-title">Repositories:</h3>
+                <h3 className={classes.title}>Repositories:</h3>
                 {reposSection}
               </div>
             </div>
